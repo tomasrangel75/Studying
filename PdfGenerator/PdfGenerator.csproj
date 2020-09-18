@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="PageHeaderFooter\LogoEzze.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="PageHeaderFooter\LogoEzze.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DinkToPdf" Version="1.0.8" />
   </ItemGroup>
 
