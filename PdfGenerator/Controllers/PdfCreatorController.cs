@@ -28,7 +28,7 @@ namespace PdfGenerator.Controllers
                 ColorMode = ColorMode.Color,
                 Orientation = Orientation.Portrait,
                 PaperSize = PaperKind.A4,
-                Margins = new MarginSettings { Top = 25 },
+                Margins = new MarginSettings { Top = 20 },
                 DocumentTitle = "Demand EO",
             };
 
