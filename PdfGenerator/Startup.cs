@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using DinkToPdf;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PdfGenerator.Utility;
 
 namespace PdfGenerator
 {
@@ -27,6 +29,11 @@ namespace PdfGenerator
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           // to publish dinTopdf
+           var context = new CustomAssemblyLoadContext();
+            context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), "Utility", "libwkhtmltox.dll"));
+           ////
+
             services.AddControllers();
             services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
         }

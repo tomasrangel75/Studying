@@ -5,10 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="libwkhtmltox.dll" />
     <None Remove="PageHeaderFooter\LogoEzze.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Utility\libwkhtmltox.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="PageHeaderFooter\LogoEzze.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
