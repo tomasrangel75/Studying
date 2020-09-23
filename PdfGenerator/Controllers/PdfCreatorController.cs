@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PdfGenerator.Controllers
 {
-    [Route("api/pdfcreator")]
+    [Route("api/pdfcreator/[Action]")]
     [ApiController]
     public class PdfCreatorController : ControllerBase
     {
@@ -21,6 +21,7 @@ namespace PdfGenerator.Controllers
         }
 
         [HttpGet]
+        [ActionName("Thumbnail")]
         public IActionResult CreatePDF()
         {
             var globalSettings = new GlobalSettings
